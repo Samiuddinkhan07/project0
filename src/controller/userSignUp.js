@@ -9,7 +9,7 @@ const userSignUp = {
     handler: async (req, res) => {
         try {
             const { name, password, email,username } = req.body;
-            if (!name || !password || !email) {
+            if (!name || !password || !email || !username) {
                 return res.status(400).json({message:"Please Provide the values"});   
         }
         const saltRounds  = 10;
@@ -24,7 +24,6 @@ const userSignUp = {
         const existingUsername =  await User.findOne({username});
         if(existingUsername){
             return res.status(400).json({message:"A user already exists with this username"});
-            
         }
         const user = new User({
             name,
