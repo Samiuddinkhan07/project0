@@ -3,7 +3,7 @@ import userLogin from "../controller/userLogin.js";
 
 const routes = [
     userSignUp,
-    userLogin
+    userLogin,
 ]
 
 export default routes;

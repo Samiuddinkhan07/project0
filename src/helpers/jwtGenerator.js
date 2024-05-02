@@ -8,8 +8,8 @@ const jwtTokenGenerator  = (userData) =>{
 }
 
 // verifys the user token
-const jwtTokenVerifyer = (req,res,next) =>{
-    const token  = jwt.verify(user,process.env.SECRET_KEY)
+const jwtTokenVerifyer = (userToken) =>{
+    const token  = jwt.verify(userToken,process.env.SECRET_KEY)
     return token;
 }
 
